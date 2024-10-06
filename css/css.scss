@@ -1,0 +1,74 @@
+// palette https://coolors.co/palette/03045e-0077b6-00b4d8-90e0ef-caf0f8
+$dark-color: #03045e;
+$dark-blue-color: #0077b6;
+$blue-color: #00b4d8;
+$light-blue-color: #90e0ef;
+$bg-color: #caf0f8;
+$white-color: white;
+
+$base-font: Verdana, sans-serif;
+$header-font-size:16px;
+
+body {
+    margin: 0;
+    background: $bg-color;
+
+    font-family: $base-font;
+    text-align: center;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    background: $dark-color;
+    
+    a {
+        color: $white-color;
+        text-decoration: none;
+    }
+    .header-nav{
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        font-size: $header-font-size;
+        a { color: $bg-color;
+            &:hover{
+                color: $light-blue-color;}
+          }
+    }
+}
+
+.welcome {
+    display: flex;
+    height: 80vh;
+
+    .welcome-text {
+        width: 50%;
+        margin-top: 20vh;
+        padding: 50px;
+    }
+
+    .welcome-image {
+        background-image: url("../assets/my-photo.png");
+        background-size: cover;
+        background-position: center;
+
+        width: 50%;
+    }
+}
+
+.portfolio {
+    width: 80%;
+    margin: 150px auto 50px auto;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px 20px 20px;
+
+    background: $dark-color;
+    color: $bg-color;
+}
