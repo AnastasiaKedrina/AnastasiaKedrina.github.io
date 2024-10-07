@@ -1,0 +1,90 @@
+$base-font-size:14px;
+
+$hover-alpha:0.5;
+$hover-color:black;
+
+$title-font-size: $base-font-size*2;
+$title-font-weight: bold;
+$title-font-style: normal;
+$subtitle-font-size: $base-font-size;
+$subtitle-font-weight: normal;
+$subtitle-font-style: italic;
+
+$text-align:left;
+$text-padding:25px;
+
+$pixelart-height:300px;
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.flex-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+    .flex-img,  img {
+        width: 100%;
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+    .pixelart-img {
+        height: $pixelart-height;
+
+        background-image: url("../assets/Графика/Пиксельарт_1.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // transition: background-image 0.3s ease;
+        &:hover{
+            background-image: url("../assets/Графика/Пиксельарт_2.png");
+        }
+
+        &:hover::before {
+            content: "Пиксельный аудиореактив";
+            display: block;
+            padding: $text-padding $text-padding*1.5;
+            height: $pixelart-height - $text-padding*2;
+
+            background-color: rgba($color: $hover-color, $alpha: $hover-alpha);
+            color: white;
+            font-size: $title-font-size;
+            font-weight:$title-font-weight;
+            font-style:$title-font-style;
+            text-align: $text-align;
+            
+        }
+        &:hover::after {
+            content: "Генеративная аудиореактивная графика в пиксельном стиле";
+            display: block;
+            padding: $text-padding*3 $text-padding*1.5;
+            height: $pixelart-height - $text-padding*2;
+
+            position: relative;
+            bottom:91%;
+            color: white;
+            font-size: $subtitle-font-size;
+            font-weight:$subtitle-font-weight;
+            font-style:$subtitle-font-style;
+            text-align: $text-align;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .flex-column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .flex-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 4px;
+}
+
+.flex-column {
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.flex-column .flex-img, .flex-column img {
+  width: 100%;
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.flex-column .pixelart-img {
+  height: 300px;
+  background-image: url("../assets/Графика/Пиксельарт_1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.flex-column .pixelart-img:hover {
+  background-image: url("../assets/Графика/Пиксельарт_2.png");
+}
+
+.flex-column .pixelart-img:hover::before {
+  content: "Пиксельный аудиореактив";
+  display: block;
+  padding: 25px 37.5px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  text-align: left;
+}
+
+.flex-column .pixelart-img:hover::after {
+  content: "Генеративная аудиореактивная графика в пиксельном стиле";
+  display: block;
+  padding: 75px 37.5px;
+  height: 250px;
+  position: relative;
+  bottom: 91%;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .flex-column {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .flex-column {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=flex-grid.css.map */

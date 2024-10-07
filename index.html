@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="css/css.css" type="text/css" rel="stylesheet">
+    <link href="css/flex-grid.css" type="text/css" rel="stylesheet">
     <title>Портфолио</title>
 </head>
 
 <body>
 
     <header class="header">
-        <div><a href="index.html>">@NKEDRINA</a></div>
+        <div><a class="header-logo" href="index.html>">АНАСТАСИЯ КЕДРИНА <br> @NKEDRINA</a></div>
         <nav class="header-nav">
-            <div><a href="#">Медиаискусство</a></div>
-            <div><a href="#">Фотографии</a></div>
-            <div><a href="#">Дизайн</a></div>
-            <div><a href="#">Другое</a></div>
+            <div><a href="#">МЕДИАИСКУССТВО</a></div>
+            <div><a href="#">ФОТОГРАФИИ</a></div>
+            <div><a href="#">ДИЗАЙН</a></div>
+            <div><a href="#">ДРУГОЕ</a></div>
         </nav>
     </header>
 
@@ -39,6 +40,31 @@
         <section>
             <h2>Медиаискусство</h2>
             <p>текст</p>
+            <div class="flex-row">
+                <div class="flex-column">
+                    <div class="flex-img pixelart-img"></div>
+
+                    <img src="assets/Графика/Видеоарт_1.jpg">
+                    <!-- alt??? -->
+                </div>
+
+                <div class="flex-column">
+                    <img src="assets/Графика/Инсталляция_1.png">
+                    <img src="assets/Графика/Перформанс_1.png">
+                </div>
+
+                <div class="flex-column">
+                    <div class="flex-img mirror-img">
+                        <img src="assets/Графика/Детство_2.JPG"> 
+                        <div class="mirror-text">
+                            <span class="mirror-title">Зеркало "Мечты"</span>
+                            <span class="mirror-subtitle">Работа выполнена в рамках фестиваля Детство 17 августа 2024</span>
+                        </div>
+                    </div>
+
+                    <img src="assets/Графика/Фортепиано_1.jpg">
+                </div>
+            </div>
         </section>
 
         <section>
