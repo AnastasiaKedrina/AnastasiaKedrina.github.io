@@ -1,84 +1,131 @@
-$base-font-size:14px;
+$base-font-size: 14px;
 
-$hover-alpha:0.5;
-$hover-color:black;
+$hover-alpha: 0.5;
+$hover-color: black;
 
-$title-font-size: $base-font-size*2;
+$title-font-size: $base-font-size * 2;
 $title-font-weight: bold;
 $title-font-style: normal;
 $subtitle-font-size: $base-font-size;
 $subtitle-font-weight: normal;
 $subtitle-font-style: italic;
 
-$text-align:left;
-$text-padding:25px;
+$text-align: left;
+$text-padding: 25px;
+$grid-padding:4px;
 
-$pixelart-height:300px;
+$pixelart-height: 300px;
+$videoart-height: 400px;
+$installation-height: 400px;
+$performance-height: 300px;
+$mirror-height: 300px;
+$piano-height: 400px;
 
 .flex-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 4px;
+    padding: 0 $grid-padding;
 }
 
 .flex-column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-    .flex-img,  img {
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 $grid-padding;
+    img {
         width: 100%;
         margin-top: 8px;
         vertical-align: middle;
     }
-    .pixelart-img {
-        height: $pixelart-height;
-
-        background-image: url("../assets/Графика/Пиксельарт_1.png");
+    .flex-img{
+        width: 100%;
+        margin-top: 8px;
+        vertical-align: middle;
+        
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+    }
 
-        // transition: background-image 0.3s ease;
-        &:hover{
-            background-image: url("../assets/Графика/Пиксельарт_2.png");
+    .flex-hover {
+        height: 100%;
+        background-color: rgba($color: $hover-color, $alpha: $hover-alpha);
+
+        padding: 0 $text-padding;
+        text-align: $text-align;
+
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        &:hover {
+            opacity: 1;
         }
 
-        &:hover::before {
-            content: "Пиксельный аудиореактив";
+        .flex-title {
             display: block;
-            padding: $text-padding $text-padding*1.5;
-            height: $pixelart-height - $text-padding*2;
+            padding-top: $text-padding;
 
-            background-color: rgba($color: $hover-color, $alpha: $hover-alpha);
             color: white;
             font-size: $title-font-size;
-            font-weight:$title-font-weight;
-            font-style:$title-font-style;
-            text-align: $text-align;
-            
+            font-weight: $title-font-weight;
+            font-style: $title-font-style;
         }
-        &:hover::after {
-            content: "Генеративная аудиореактивная графика в пиксельном стиле";
-            display: block;
-            padding: $text-padding*3 $text-padding*1.5;
-            height: $pixelart-height - $text-padding*2;
-
-            position: relative;
-            bottom:91%;
+        .flex-subtitle {
             color: white;
             font-size: $subtitle-font-size;
-            font-weight:$subtitle-font-weight;
-            font-style:$subtitle-font-style;
-            text-align: $text-align;
+            font-weight: $subtitle-font-weight;
+            font-style: $subtitle-font-style;
+            padding-right: 50px;
+        }
+    }
+
+    .pixelart-img {
+        height: $pixelart-height;
+        background-image: url("../assets/Графика/Пиксельарт_1.png");  
+        &:hover {
+            background-image: url("../assets/Графика/Пиксельарт_2.png");
+        }
+    }
+    .videoart-img {
+        height: $videoart-height;
+        background-image: url("../assets/Графика/Видеоарт_1.jpg");  
+        &:hover {
+            background-image: url("../assets/Графика/Видеоарт_1.jpg");
+        }
+    }
+    .installation-img {
+        height: $installation-height;
+        background-image: url("../assets/Графика/Инсталляция_1.png");  
+        &:hover {
+            background-image: url("../assets/Графика/Инсталляция_1.png");
+        }
+    }
+    .performance-img {
+        height: $performance-height;
+        background-image: url("../assets/Графика/Перформанс_1.png");  
+        &:hover {
+            background-image: url("../assets/Графика/Перформанс_1.png");
+        }
+    }
+    .mirror-img {
+        height: $mirror-height;
+        background-image: url("../assets/Графика/Детство_2.JPG");  
+        &:hover {
+            background-image: url("../assets/Графика/Детство_2.JPG");
+        }
+    }
+    .piano-img {
+        height: $piano-height;
+        background-image: url("../assets/Графика/Фортепиано_1.jpg");  
+        &:hover {
+            background-image: url("../assets/Графика/Фортепиано_1.jpg");
         }
     }
 }
 
 @media (max-width: 800px) {
     .flex-column {
-        flex: 50%;
-        max-width: 50%;
+        flex: 80%;
+        max-width: 80%;
     }
 }
 
