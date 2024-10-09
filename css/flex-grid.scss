@@ -14,12 +14,16 @@ $text-align: left;
 $text-padding: 25px;
 $grid-padding:4px;
 
-$pixelart-height: 300px;
-$videoart-height: 400px;
-$installation-height: 400px;
-$performance-height: 300px;
-$mirror-height: 300px;
-$piano-height: 400px;
+$pixelart-height: 350px;
+$videoart-height: 450px;
+$installation-height: 450px;
+$performance-height: 350px;
+$mirror-height: 350px;
+$piano-height: 450px;
+
+$baikal-height: 350px;
+$walk-height: $baikal-height;
+$way-height: $baikal-height;
 
 .flex-row {
     display: flex;
@@ -55,7 +59,7 @@ $piano-height: 400px;
         text-align: $text-align;
 
         opacity: 0;
-        transition: opacity 0.6s ease;
+        // transition: opacity 0.6s ease;
         &:hover {
             opacity: 1;
         }
@@ -89,26 +93,26 @@ $piano-height: 400px;
         height: $videoart-height;
         background-image: url("../assets/Графика/Видеоарт_1.jpg");  
         &:hover {
-            background-image: url("../assets/Графика/Видеоарт_1.jpg");
+            background-image: url("../assets/Графика/Видеоарт_2.png");
         }
     }
     .installation-img {
         height: $installation-height;
         background-image: url("../assets/Графика/Инсталляция_1.png");  
         &:hover {
-            background-image: url("../assets/Графика/Инсталляция_1.png");
+            background-image: url("../assets/Графика/Инсталляция_2.jpg");
         }
     }
     .performance-img {
         height: $performance-height;
         background-image: url("../assets/Графика/Перформанс_1.png");  
         &:hover {
-            background-image: url("../assets/Графика/Перформанс_1.png");
+            background-image: url("../assets/Графика/Перформанс_2.jpg");
         }
     }
     .mirror-img {
         height: $mirror-height;
-        background-image: url("../assets/Графика/Детство_2.JPG");  
+        background-image: url("../assets/Графика/Детство_1.JPG");  
         &:hover {
             background-image: url("../assets/Графика/Детство_2.JPG");
         }
@@ -117,7 +121,28 @@ $piano-height: 400px;
         height: $piano-height;
         background-image: url("../assets/Графика/Фортепиано_1.jpg");  
         &:hover {
-            background-image: url("../assets/Графика/Фортепиано_1.jpg");
+            background-image: url("../assets/Графика/Аудиореактив_1.png");
+        }
+    }
+    .baikal-img {
+        height: $baikal-height;
+        background-image: url("../assets/Фотография/Байкал_1.JPG");  
+        &:hover {
+            background-image: url("../assets/Фотография/Байкал_2.JPG");  
+        }
+    }
+    .walk-img {
+        height: $baikal-height;
+        background-image: url("../assets/Фотография/Прогулка_1.JPG");  
+        &:hover {
+            background-image: url("../assets/Фотография/Прогулка_2.JPG");   
+        }
+    }
+    .way-img {
+        height: $baikal-height;
+        background-image: url("../assets/Фотография/Путь_1.JPG");  
+        &:hover {
+            background-image: url("../assets/Фотография/Путь_3.JPG");  
         }
     }
 }

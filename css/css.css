@@ -16,7 +16,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 35px;
+  padding: 0 35px;
+  height: 15vh;
   background: white;
   text-align: left;
   font-weight: bold;
@@ -40,7 +41,7 @@ body {
 }
 
 .header .header-nav a {
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .header .header-nav a:hover {
@@ -56,20 +57,38 @@ body {
 
 .welcome .welcome-text {
   width: 50%;
-  margin-top: 20vh;
+  margin-top: 15vh;
   padding: 50px;
+  text-align: right;
+}
+
+.welcome .welcome-text h1 {
+  font-size: 70px;
+}
+
+.welcome .welcome-text span {
+  font-size: 16.8px;
+  font-style: italic;
 }
 
 .welcome .welcome-image {
   background-image: url("../assets/my-photo.png");
   background-size: cover;
   background-position: center;
-  width: 50%;
+  width: 80%;
 }
 
 .portfolio {
   width: 80%;
   margin: 150px auto 50px auto;
+}
+
+.portfolio h2 {
+  font-size: 42px;
+}
+
+.section-mediaart, .section-photo {
+  margin: 200px 0;
 }
 
 .footer {
@@ -80,7 +99,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 40px 20px 20px 20px;
-  background: #AAAAAA;
+  background: #aaaaaa;
   color: black;
 }
 /*# sourceMappingURL=css.css.map */

@@ -6,11 +6,13 @@ $light-blue-color: #90e0ef;
 $bg-color: #caf0f8;
 
 $black-color: black;
-$gray-color: #AAAAAA;
+$gray-color: #aaaaaa;
 $white-color: white;
 
 $base-font: Helvetica, sans-serif;
-$base-font-size:14px;
+$base-font-size: 14px;
+
+$header-height: 15vh;
 
 body {
     margin: 0;
@@ -21,42 +23,63 @@ body {
     text-align: center;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
-    align-items:center;
-    padding: 35px;
+    align-items: center;
+    padding: 0 35px;
+    height: $header-height;
 
     background: $white-color;
     text-align: left;
     font-weight: bold;
-    font-size: $base-font-size*1.5;
-    
+    font-size: $base-font-size * 1.5;
+
     a {
         color: $black-color;
         text-decoration: none;
     }
-    .header-nav{
+    .header-nav {
         display: flex;
         justify-content: space-between;
         width: 430px;
         font-size: $base-font-size;
-        a { color: $gray-color;
-            &:hover{
-                color: $black-color;}
-          }
+        a {
+            color: $gray-color;
+            &:hover {
+                color: $black-color;
+            }
+        }
     }
 }
+// .header{
+//     position: fixed;
+//     width: 100%;
+//     top:-100px;
+//     transition: top 0.2s ease;
+//     &:hover{
+//         top:0;
+//     }
+// }
 
 .welcome {
     // display: none;
     display: flex;
-    height: 80vh;
+    height: 95 - $header-height;
 
     .welcome-text {
         width: 50%;
-        margin-top: 20vh;
+        margin-top: 15vh;
         padding: 50px;
+        text-align: right;
+
+        h1 {
+            font-size: $base-font-size * 5;
+        }
+        span {
+            font-size: $base-font-size * 1.2;
+            font-style: italic;
+        }
     }
 
     .welcome-image {
@@ -64,16 +87,30 @@ body {
         background-size: cover;
         background-position: center;
 
-        width: 50%;
+        width: 80%;
     }
 }
 
 .portfolio {
     width: 80%;
     margin: 150px auto 50px auto;
+
+    h2{
+        font-size: $base-font-size*3;
+    }
 }
 
-.footer{
+
+.section-mediaart, .section-photo{
+    margin: 200px 0;
+}
+
+
+
+
+
+
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 40px 20px 20px 20px;
