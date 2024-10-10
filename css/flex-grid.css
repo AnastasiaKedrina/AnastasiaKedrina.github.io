@@ -144,6 +144,33 @@
   background-image: url("../assets/Фотография/Путь_3.JPG");
 }
 
+.flex-column .symphony-img {
+  height: 350px;
+  background-image: url("../assets/Учеба/Кинетическая симфония_1.png");
+}
+
+.flex-column .symphony-img:hover {
+  background-image: url("../assets/Учеба/Кинетическая симфония_2.jpg");
+}
+
+.flex-column .iot-img {
+  height: 350px;
+  background-image: url("../assets/Учеба/iot_1.png");
+}
+
+.flex-column .iot-img:hover {
+  background-image: url("../assets/Учеба/iot_2.png");
+}
+
+.flex-column .design-img {
+  height: 350px;
+  background-image: url("../assets/Учеба/Мокап газеты_2.png");
+}
+
+.flex-column .design-img:hover {
+  background-image: url("../assets/Учеба/Мокап.png");
+}
+
 @media (max-width: 800px) {
   .flex-column {
     -webkit-box-flex: 80%;

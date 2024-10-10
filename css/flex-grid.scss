@@ -25,6 +25,10 @@ $baikal-height: 350px;
 $walk-height: $baikal-height;
 $way-height: $baikal-height;
 
+$symphony-height: 350px;
+$iot-height: $symphony-height;
+$design-height: $symphony-height;
+
 .flex-row {
     display: flex;
     flex-wrap: wrap;
@@ -132,17 +136,38 @@ $way-height: $baikal-height;
         }
     }
     .walk-img {
-        height: $baikal-height;
+        height: $walk-height;
         background-image: url("../assets/Фотография/Прогулка_1.JPG");  
         &:hover {
             background-image: url("../assets/Фотография/Прогулка_2.JPG");   
         }
     }
     .way-img {
-        height: $baikal-height;
+        height: $way-height;
         background-image: url("../assets/Фотография/Путь_1.JPG");  
         &:hover {
             background-image: url("../assets/Фотография/Путь_3.JPG");  
+        }
+    }
+    .symphony-img {
+        height: $symphony-height;
+        background-image: url("../assets/Учеба/Кинетическая\ симфония_1.png");  
+        &:hover {
+            background-image: url("../assets/Учеба/Кинетическая\ симфония_2.jpg");  
+        }
+    }
+    .iot-img {
+        height: $iot-height;
+        background-image: url("../assets/Учеба/iot_1.png");   
+        &:hover {
+            background-image: url("../assets/Учеба/iot_2.png");   
+        }
+    }
+    .design-img {
+        height: $design-height;
+        background-image: url("../assets/Учеба/Мокап\ газеты_2.png");    
+        &:hover {
+            background-image: url("../assets/Учеба/Мокап.png");    
         }
     }
 }
