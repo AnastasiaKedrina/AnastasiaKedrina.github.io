@@ -171,12 +171,12 @@
   background-image: url("../assets/Учеба/Мокап.png");
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .flex-column {
-    -webkit-box-flex: 80%;
-        -ms-flex: 80%;
-            flex: 80%;
-    max-width: 80%;
+    -webkit-box-flex: 90%;
+        -ms-flex: 90%;
+            flex: 90%;
+    max-width: 90%;
   }
 }
 

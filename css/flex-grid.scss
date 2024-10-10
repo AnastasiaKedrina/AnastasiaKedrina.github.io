@@ -29,6 +29,7 @@ $symphony-height: 350px;
 $iot-height: $symphony-height;
 $design-height: $symphony-height;
 
+
 .flex-row {
     display: flex;
     flex-wrap: wrap;
@@ -172,10 +173,10 @@ $design-height: $symphony-height;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .flex-column {
-        flex: 80%;
-        max-width: 80%;
+        flex: 90%;
+        max-width: 90%;
     }
 }
 
