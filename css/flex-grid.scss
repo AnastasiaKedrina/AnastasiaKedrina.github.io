@@ -38,8 +38,8 @@ $design-height: $symphony-height;
 }
 
 .flex-column {
-    flex: 30%;
-    max-width: 30%;
+    flex: 32%;
+    max-width: 32%;
     padding: 0 $grid-padding;
     img {
         width: 100%;
@@ -62,11 +62,6 @@ $design-height: $symphony-height;
 
         padding: 0 $text-padding;
         text-align: $text-align;
-
-        // opacity: 0;
-        // &:hover {
-        //     opacity: 1;
-        // }
 
         .flex-title {
             display: block;
@@ -188,17 +183,8 @@ $design-height: $symphony-height;
         max-width: 100%;
     }
     .flex-hover{
-        // position: relative;
-        // top:200px;
         opacity:1;
         background-color: none;
         height:100px;    
     }
 }
-
-// @media (max-width: 600px) {
-//     .flex-column {
-//         flex: 100%;
-//         max-width: 100%;
-//     }
-// }
