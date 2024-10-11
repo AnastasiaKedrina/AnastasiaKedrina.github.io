@@ -12,7 +12,7 @@ $subtitle-font-style: italic;
 
 $text-align: left;
 $text-padding: 25px;
-$grid-padding:4px;
+$grid-padding: 4px;
 
 $pixelart-height: 350px;
 $videoart-height: 450px;
@@ -28,7 +28,6 @@ $way-height: $baikal-height;
 $symphony-height: 350px;
 $iot-height: $symphony-height;
 $design-height: $symphony-height;
-
 
 .flex-row {
     display: flex;
@@ -46,14 +45,17 @@ $design-height: $symphony-height;
         margin-top: 8px;
         vertical-align: middle;
     }
-    .flex-img{
+    .flex-img {
         width: 100%;
         margin-top: 8px;
         vertical-align: middle;
-        
+
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        a {
+            text-decoration: none;
+        }
     }
 
     .flex-hover {
@@ -82,99 +84,98 @@ $design-height: $symphony-height;
 
     .pixelart-img {
         height: $pixelart-height;
-        background-image: url("../assets/Графика/Пиксельарт_1.png");  
+        background-image: url("../assets/Графика/Пиксельарт_1.png");
         &:hover {
             background-image: url("../assets/Графика/Пиксельарт_2.png");
         }
     }
     .videoart-img {
         height: $videoart-height;
-        background-image: url("../assets/Графика/Видеоарт_1.jpg");  
+        background-image: url("../assets/Графика/Видеоарт_1.jpg");
         &:hover {
             background-image: url("../assets/Графика/Видеоарт_2.png");
         }
     }
     .installation-img {
         height: $installation-height;
-        background-image: url("../assets/Графика/Инсталляция_1.png");  
+        background-image: url("../assets/Графика/Инсталляция_1.png");
         &:hover {
             background-image: url("../assets/Графика/Инсталляция_2.jpg");
         }
     }
     .performance-img {
         height: $performance-height;
-        background-image: url("../assets/Графика/Перформанс_1.png");  
+        background-image: url("../assets/Графика/Перформанс_1.png");
         &:hover {
             background-image: url("../assets/Графика/Перформанс_2.jpg");
         }
     }
     .mirror-img {
         height: $mirror-height;
-        background-image: url("../assets/Графика/Детство_1.JPG");  
+        background-image: url("../assets/Графика/Детство_1.JPG");
         &:hover {
             background-image: url("../assets/Графика/Детство_2.JPG");
         }
     }
     .piano-img {
         height: $piano-height;
-        background-image: url("../assets/Графика/Фортепиано_1.jpg");  
+        background-image: url("../assets/Графика/Фортепиано_1.jpg");
         &:hover {
             background-image: url("../assets/Графика/Аудиореактив_1.png");
         }
     }
     .baikal-img {
         height: $baikal-height;
-        background-image: url("../assets/Фотография/Байкал_1.JPG");  
+        background-image: url("../assets/Фотография/Байкал_1.JPG");
         &:hover {
-            background-image: url("../assets/Фотография/Байкал_2.JPG");  
+            background-image: url("../assets/Фотография/Байкал_2.JPG");
         }
     }
     .walk-img {
         height: $walk-height;
-        background-image: url("../assets/Фотография/Прогулка_1.JPG");  
+        background-image: url("../assets/Фотография/Прогулка_1.JPG");
         &:hover {
-            background-image: url("../assets/Фотография/Прогулка_2.JPG");   
+            background-image: url("../assets/Фотография/Прогулка_2.JPG");
         }
     }
     .way-img {
         height: $way-height;
-        background-image: url("../assets/Фотография/Путь_1.JPG");  
+        background-image: url("../assets/Фотография/Путь_1.JPG");
         &:hover {
-            background-image: url("../assets/Фотография/Путь_3.JPG");  
+            background-image: url("../assets/Фотография/Путь_3.JPG");
         }
     }
     .symphony-img {
         height: $symphony-height;
-        background-image: url("../assets/Учеба/Кинетическая\ симфония_1.png");  
+        background-image: url("../assets/Учеба/Кинетическая\ симфония_1.png");
         &:hover {
-            background-image: url("../assets/Учеба/Кинетическая\ симфония_2.jpg");  
+            background-image: url("../assets/Учеба/Кинетическая\ симфония_2.jpg");
         }
     }
     .iot-img {
         height: $iot-height;
-        background-image: url("../assets/Учеба/iot_1.png");   
+        background-image: url("../assets/Учеба/iot_1.png");
         &:hover {
-            background-image: url("../assets/Учеба/iot_2.png");   
+            background-image: url("../assets/Учеба/iot_2.png");
         }
     }
     .design-img {
         height: $design-height;
-        background-image: url("../assets/Учеба/Мокап\ газеты_2.png");    
+        background-image: url("../assets/Учеба/Мокап\ газеты_2.png");
         &:hover {
-            background-image: url("../assets/Учеба/Мокап.png");    
+            background-image: url("../assets/Учеба/Мокап.png");
         }
     }
 }
 
-
 @media (min-width: 900px) {
-    .flex-hover{
+    .flex-hover {
         opacity: 0;
         &:hover {
             opacity: 1;
         }
     }
-    .flex-title{
+    .flex-title {
         font-size: $title-font-size;
     }
 }
@@ -183,17 +184,17 @@ $design-height: $symphony-height;
         flex: 100%;
         max-width: 100%;
     }
-    .flex-hover{
-        opacity:1;
+    .flex-hover {
+        opacity: 1;
         background-color: none;
-        height:100px;    
+        height: 100px;
     }
-    .flex-title{
+    .flex-title {
         font-size: $title-font-size;
     }
 }
-    @media (max-width: 600px) {
-    .flex-title{
-        font-size: $title-font-size*0.8;
+@media (max-width: 600px) {
+    .flex-title {
+        font-size: $title-font-size * 0.8;
     }
 }
