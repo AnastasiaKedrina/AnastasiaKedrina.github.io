@@ -34,7 +34,7 @@ body {
         display: block;
         color: $black-color;
         text-decoration: none;
-        margin-left: 20px;
+        margin-left: 30px;
     }
     .header-nav {
         a {
@@ -58,9 +58,6 @@ body {
             display: block;
             text-align: right;
         }
-        h1 {
-            font-size: $base-font-size * 5;
-        }
         .text {
             font-size: $base-font-size * 1.2;
             font-style: italic;
@@ -76,12 +73,7 @@ body {
 }
 
 .portfolio {
-    // width: 80%;
     margin: 150px auto 50px auto;
-
-    h2 {
-        font-size: $base-font-size * 3;
-    }
 }
 
 section {
@@ -105,24 +97,29 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 25px auto 50px auto;
+    margin: 50px auto 100px auto;
 
     .contact {
-        width: 80px;
-        height: 80px;
-        border-radius: 25%;
+        border-radius: 20px;
         a {
             display: block;
             position: relative;
 
             width: 100%;
-            padding-top: 105%;
+            padding-top: 110%;
             border-radius: inherit;
 
             text-decoration: none;
             font-weight: bold;
             text-align: center;
             color: $black-color;
+
+            $hover-alpha: 0.5;
+            $hover-color: white;
+            background-color: rgba($color: $hover-color, $alpha: 0);
+            &:hover{
+                background-color: rgba($color: $hover-color, $alpha: $hover-alpha);
+            }
         }
     }
     .bento {
@@ -151,6 +148,9 @@ section {
 @media (min-width: 900px) {
     .portfolio {
         width: 80%;
+        h2 {
+            font-size: $base-font-size * 3;
+        }
     }
     .header-nav {
         display: flex;
@@ -158,11 +158,16 @@ section {
     .welcome-text {
         width: 47%;
         h1 {
+            font-size: $base-font-size * 5;
             margin-top: 150px;
         }
     }
     .footer {
         width: 50%;
+        .contact {
+            width: 80px;
+            height: 80px;
+        }
     }
 }
 @media (max-width: 1100px) {
@@ -174,6 +179,9 @@ section {
 @media (max-width: 900px) {
     .portfolio {
         width: 80%;
+        h2 {
+            font-size: $base-font-size * 3;
+        }
     }
     .welcome {
         background-image: url("../assets/my-photo.png");
@@ -185,26 +193,47 @@ section {
             $hover-color: rgb(0, 0, 0);
             background-color: rgba($color: $hover-color, $alpha: $hover-alpha);
             color:$white-color;
-            padding-right: 50px;
+            padding-right: 40px;
+
+            width:100%;
+            h1 {
+                font-size: $base-font-size * 4;
+            }
+            h1, .text{
+                display: block;
+                position: relative;
+                top: 55%;
+            }
         }
         .welcome-image {
             display: none;
-        }
-        .welcome-text {
-            width:100%;
-            h1 {
-                margin-top: 300px;
-            }
         }
     }
     
     .header-nav {
         display: none;
     }
+    .footer {
+        width: 90%;
+        .contact {
+            width: 80px;
+            height: 80px;
+        }
+    }
 }
 
 @media (max-width: 600px) {
     .portfolio {
         width: 100%;
+        h2 {
+            font-size: $base-font-size * 2;
+        }
+    }
+    .footer {
+        .contact {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+        }
     }
 }

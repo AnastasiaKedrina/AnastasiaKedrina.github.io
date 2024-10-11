@@ -45,7 +45,6 @@
   display: block;
   padding-top: 25px;
   color: white;
-  font-size: 28px;
   font-weight: bold;
   font-style: normal;
 }
@@ -173,6 +172,9 @@
   .flex-hover:hover {
     opacity: 1;
   }
+  .flex-title {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -186,6 +188,15 @@
     opacity: 1;
     background-color: none;
     height: 100px;
+  }
+  .flex-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flex-title {
+    font-size: 22.4px;
   }
 }
 /*# sourceMappingURL=flex-grid.css.map */

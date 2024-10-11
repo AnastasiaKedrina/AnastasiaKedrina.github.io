@@ -68,7 +68,6 @@ $design-height: $symphony-height;
             padding-top: $text-padding;
 
             color: white;
-            font-size: $title-font-size;
             font-weight: $title-font-weight;
             font-style: $title-font-style;
         }
@@ -174,7 +173,9 @@ $design-height: $symphony-height;
         &:hover {
             opacity: 1;
         }
-
+    }
+    .flex-title{
+        font-size: $title-font-size;
     }
 }
 @media (max-width: 900px) {
@@ -186,5 +187,13 @@ $design-height: $symphony-height;
         opacity:1;
         background-color: none;
         height:100px;    
+    }
+    .flex-title{
+        font-size: $title-font-size;
+    }
+}
+    @media (max-width: 600px) {
+    .flex-title{
+        font-size: $title-font-size*0.8;
     }
 }
