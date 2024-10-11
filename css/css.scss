@@ -181,6 +181,17 @@ body {
         .welcome-image {
             display: none;
         }
+        // .collage-img{
+        //     background-size: cover;
+        //     height: 600px;
+        // }
+        .footer {
+            flex-wrap: wrap;
+            .contact {
+                width: 50px;
+                height: 50px;
+            }
+        }
     }
 }
 
