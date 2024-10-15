@@ -1,6 +1,9 @@
-$black-color: black;
-$gray-color: #aaaaaa;
-$white-color: white;
+// $black-color: black;
+// $gray-color: #aaaaaa;
+// $white-color: white;
+$black-color: #6f60b1;
+$gray-color: #b1b3df;
+$white-color: #f4f6fc;
 
 $base-font: Helvetica, sans-serif;
 $base-font-size: 14px;
@@ -14,6 +17,7 @@ $header-height: 15vh;
 body {
     margin: 0;
     background: $white-color;
+    color:$black-color;
 
     font-family: $base-font;
     font-size: $base-font-size;
@@ -112,7 +116,7 @@ section {
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            color: $black-color;
+            color:$black-color;
 
             $hover-alpha: 0.5;
             $hover-color: white;
