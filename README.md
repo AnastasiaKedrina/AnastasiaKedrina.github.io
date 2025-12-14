@@ -1,25 +1,10 @@
-# TensorFlow.js Example: Getting Started
+# TensorFlow.js Example: Transfer Learning to play Pacman via the Webcam
 
-This minimal example loads tfjs from a CDN, builds and trains a minimal model,
-and uses it to predict.  Edit `index.js` and load `index.html` in your
-browser to test small snippets.
+This example shows you how to predict poses from a webcam using transfer
+learning.
 
-## Run the demo
+In this example, we'll use a pretrained [MobileNet](https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet) model and train another model
+using an internal mobilenet activation to predict 4 different classes from the
+webcam defined by the user.
 
-1. Install the required dependencies:
-
-  ```sh
-  yarn install
-  ```
-
-2. Start the server using the following yarn command:
-
-  ```
-  yarn watch
-  ```
-
-3. The console logs include the address of the server: http://127.0.0.1:1234
-
-  Follow the address to load the model and make a prediction.
-  The predicted result will display on the page.
-
+[See this example live!](https://storage.googleapis.com/tfjs-examples/webcam-transfer-learning/dist/index.html)
