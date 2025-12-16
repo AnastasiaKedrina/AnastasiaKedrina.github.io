@@ -1,74 +1,62 @@
-let video = document.getElementById('video');
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
+async function run() {
+  const model = await cocoSsd.load();
+  const video = document.getElementById('webcam');
+  await setupCamera(video);
 
-// Пороги Canny
-const lowThreshold = 20;
-const highThreshold = 100;
+  // Подгоняем canvas под реальные размеры видео
+  const canvas = document.getElementById('canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext('2d');
 
-function startCamera() {
-    // Универсальный вариант: сначала задняя камера, если не получилось — любая
-    let constraints = { video: { facingMode: { ideal: "environment" } }, audio: false };
+  console.log('Модель загружена, камера запущена');
 
-    navigator.mediaDevices.getUserMedia(constraints)
-        .catch(() => navigator.mediaDevices.getUserMedia({ video: true, audio: false }))
-        .then(stream => {
-            video.srcObject = stream;
-            video.onloadedmetadata = () => {
-                video.play();
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                processVideo();
-            };
-        })
-        .catch(err => console.error('Ошибка доступа к камере:', err));
+  async function detectFrame() {
+    const predictions = await model.detect(video);
+    drawPredictions(predictions, ctx, video);
+    requestAnimationFrame(detectFrame);
+  }
+
+  detectFrame();
 }
 
-function processVideo() {
-    let src = new cv.Mat(video.videoHeight, video.videoWidth, cv.CV_8UC4);
-    let gray = new cv.Mat();
-    let blur = new cv.Mat();
-    let edges = new cv.Mat();
-    let contours = new cv.MatVector();
-    let hierarchy = new cv.Mat();
-    let cap = new cv.VideoCapture(video);
-
-    function detect() {
-        cap.read(src);
-
-        if (src.empty()) {
-            requestAnimationFrame(detect);
-            return;
-        }
-
-        // 1. Серое изображение
-        cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY);
-        // 2. Размытие
-        cv.GaussianBlur(gray, blur, new cv.Size(5, 5), 0);
-        // 3. Canny edge detection
-        cv.Canny(blur, edges, lowThreshold, highThreshold);
-        // 4. Находим контуры
-        cv.findContours(edges, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
-
-        // 5. Рисуем видео + bounding boxes
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < contours.size(); i++) {
-            let rect = cv.boundingRect(contours.get(i));
-            ctx.strokeStyle = 'red';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
-        }
-
-        requestAnimationFrame(detect);
-    }
-
-    detect();
+async function setupCamera(video) {
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: { facingMode: "environment" },
+    audio: false
+  });
+  video.srcObject = stream;
+  return new Promise(resolve => {
+    video.onloadedmetadata = () => {
+      video.play();
+      resolve();
+    };
+  });
 }
 
-// Используем cv.onRuntimeInitialized вместо onOpenCvReady
-cv['onRuntimeInitialized'] = () => {
-    console.log('OpenCV.js готов');
-    startCamera();
-};
+function drawPredictions(predictions, ctx, video) {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+  const scaleX = ctx.canvas.width / video.videoWidth;
+  const scaleY = ctx.canvas.height / video.videoHeight;
+
+  predictions.forEach(pred => {
+    let [x, y, width, height] = pred.bbox;
+
+    // Масштабируем bbox под canvas
+    x *= scaleX;
+    y *= scaleY;
+    width *= scaleX;
+    height *= scaleY;
+
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x, y, width, height);
+
+    ctx.font = '16px Arial';
+    ctx.fillStyle = 'red';
+    ctx.fillText(pred.class + ' (' + (pred.score * 100).toFixed(1) + '%)', x, y > 10 ? y - 5 : 10);
+  });
+}
+
+run();

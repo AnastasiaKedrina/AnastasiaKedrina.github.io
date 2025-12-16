@@ -2,25 +2,46 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>OpenCV.js All Objects Detection</title>
+  <title>WebAR COCO-SSD</title>
   <style>
-    body, html { margin: 0; padding: 0; overflow: hidden; background: black; }
-    #video, #canvas {
+    /* Совмещаем видео и canvas */
+    #container {
+      position: relative;
+      width: 640px;
+      height: 480px;
+    }
+    #webcam {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 640px;
+      height: 480px;
+    }
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 640px;
+      height: 480px;
+      pointer-events: none; /* чтобы не мешал кликам */
     }
   </style>
 </head>
 <body>
-  <video id="video" autoplay playsinline></video>
-  <canvas id="canvas"></canvas>
+  <h1>Распознавание объектов с веб-камеры</h1>
 
-  <!-- Локальная копия OpenCV.js -->
-  <script src="opencv.js"></script>
+  <div id="container">
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.13.0/dist/tf.min.js"></script>
+
+  <!-- Модель COCO-SSD -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+
+  <!-- Скрипт -->
   <script src="index.js"></script>
 </body>
 </html>
