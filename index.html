@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>WebAR COCO-SSD</title>
+  <title>A-Frame AR.js Multiple Markers</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+  <!-- Локальная копия AR.js -->
+  <script src="js/aframe-ar.js"></script>
+
   <style>
-    /* Совмещаем видео и canvas */
-    #container {
-      position: relative;
-      width: 640px;
-      height: 480px;
-    }
-    #webcam {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 640px;
-      height: 480px;
-    }
-    #canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 640px;
-      height: 480px;
-      pointer-events: none; /* чтобы не мешал кликам */
-    }
+    body { margin: 0; overflow: hidden; }
   </style>
 </head>
 <body>
-  <h1>Распознавание объектов с веб-камеры</h1>
 
-  <div id="container">
-    <video id="webcam" autoplay playsinline></video>
-    <canvas id="canvas"></canvas>
-  </div>
+<a-scene embedded
+         arjs="sourceType: webcam; sourceWidth: 640; sourceHeight: 480; debugUIEnabled: false;"
+         vr-mode-ui="enabled: false"
+         renderer="logarithmicDepthBuffer: true;">
 
-  <!-- TensorFlow.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.13.0/dist/tf.min.js"></script>
+  <!-- Маркер 1 -->
+  <a-marker type="pattern" url="markers/marker1.patt">
+    <a-box position="0 0.5 0" rotation="0 45 0" color="red" depth="0.5" height="0.5" width="0.5"></a-box>
+  </a-marker>
 
-  <!-- Модель COCO-SSD -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+  <!-- Маркер 2 -->
+  <a-marker type="pattern" url="markers/marker2.patt">
+    <a-box position="0 0.5 0" rotation="0 45 0" color="red" depth="0.5" height="0.5" width="0.5"></a-box>
+  </a-marker>
 
-  <!-- Скрипт -->
-  <script src="index.js"></script>
+  <!-- Камера -->
+  <a-entity camera></a-entity>
+
+</a-scene>
+
 </body>
 </html>
